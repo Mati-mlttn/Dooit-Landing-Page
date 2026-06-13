@@ -54,12 +54,6 @@ export default function Home() {
             <a href="#why" className="hover:text-[#0A0A0A] transition-colors">
               Why Doo It
             </a>
-            <a
-              href="#download"
-              className="hover:text-[#0A0A0A] transition-colors"
-            >
-              Download
-            </a>
           </nav>
           <a
             href="#download"
