@@ -7,14 +7,6 @@ export const metadata: Metadata = {
     "800+ illustrated exercises. Strength and cardio routines. No ads, no sign-up, 100% private.",
 };
 
-const whys = [
-  { icon: "🔒", text: "100% private — your data stays on your device only" },
-  { icon: "🚫", text: "Zero ads. Train without interruptions" },
-  { icon: "⚡", text: "No sign-up. Start training instantly" },
-  { icon: "🌍", text: "Available in English and Spanish" },
-  { icon: "📏", text: "Metric and imperial systems supported" },
-];
-
 const ticker = [
   "Squat",
   "Deadlift",
@@ -28,6 +20,16 @@ const ticker = [
   "Plank",
   "Burpees",
   "Tricep Extension",
+  "Lat Pulldown",
+  "Incline Bench Press",
+  "Leg Press",
+  "Romanian Deadlift",
+  "Walking Lunges",
+  "Bulgarian Split Squat",
+  "Leg Curl",
+  "Leg Extension",
+  "Lateral Raise",
+  "Hammer Curl"
 ];
 
 export default function Home() {
@@ -128,7 +130,35 @@ export default function Home() {
           aria-hidden
           className="py-5 border-y border-black/[0.06] overflow-hidden bg-[#f7f7f7]"
         >
-          <div className="flex gap-12 animate-[ticker_28s_linear_infinite] whitespace-nowrap w-max">
+          <div className="flex gap-12 animate-[ticker_50s_linear_infinite] whitespace-nowrap w-max">
+            {[...ticker, ...ticker].map((item, i) => (
+              <span
+                key={i}
+                className="text-sm font-semibold uppercase tracking-widest text-[#ccc]"
+              >
+                {item}
+                <span className="ml-12 text-[#1579fb]">·</span>
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* ── Full-width mockup showcase ── */}
+        {/* Mobile / small screens — zoomed crop, fixed height, no shrinking */}
+        <div className="relative w-full h-[340px] sm:h-[420px] md:hidden">
+          <Image src="/full.png" alt="..." fill className="object-cover object-center" priority />
+        </div>
+
+        {/* Tablet and up — full natural width */}
+        <div className="hidden md:block">
+          <Image src="/full-features.png" alt="..." width={4200} height={1632.32} className="w-full h-auto" priority />
+        </div>
+
+        <div
+          aria-hidden
+          className="py-5 border-y border-black/[0.06] overflow-hidden bg-[#f7f7f7]"
+        >
+          <div className="flex gap-12 animate-[ticker_50s_linear_infinite] whitespace-nowrap w-max">
             {[...ticker, ...ticker].map((item, i) => (
               <span
                 key={i}
@@ -142,7 +172,7 @@ export default function Home() {
         </div>
 
         {/* ── Features Bento ── */}
-        <section id="features" className="py-28 px-6 md:px-12 bg-[#f7f7f7]">
+        <section id="features" className="py-28 pt-15 px-6 md:px-12 bg-[#f7f7f7]">
           <div className="max-w-6xl mx-auto">
             <p className="text-xs font-semibold uppercase tracking-widest text-[#626262] mb-4 px-14">
               Features
@@ -182,32 +212,73 @@ export default function Home() {
               Why Doo It!
             </p>
             <h2 className="flex items-start gap-3 text-4xl md:text-5xl font-black tracking-tight leading-tight mb-16 max-w-lg text-[#0A0A0A]">
-              <Image
-                src="/nop.png"
-                alt=""
-                width={40}
-                height={40}
-                className="py-3"
-                priority
-              />
+              <Image src="/nop.png" alt="" width={40} height={40} className="py-3" priority />
               No tricks. No surprise subscriptions.
             </h2>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {whys.map(({ icon, text }) => (
-                <div
-                  key={text}
-                  className="flex items-start gap-4 rounded-2xl bg-white border border-black/[0.06] p-6"
-                >
-                  <span className="text-xl mt-0.5">{icon}</span>
-                  <p className="text-sm font-medium text-[#0A0A0A] leading-snug">
-                    {text}
-                  </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+              {/* Purple — Private */}
+              <div className="relative rounded-3xl overflow-hidden p-6 flex flex-col min-h-[220px]"
+                style={{background:"linear-gradient(145deg,#f3e8ff 0%,#ede9fe 60%,#f5f0ff 100%)", border:"1.5px solid #882edd25"}}>
+                <div className="absolute top-0 left-0 w-40 h-40 rounded-full pointer-events-none"
+                  style={{background:"radial-gradient(circle, #882edd30 0%, transparent 70%)", transform:"translate(-30%,-30%)"}} />
+                <div className="relative z-10 w-12 h-12 rounded-2xl flex items-center justify-center mb-auto">
+                  <Image src="/lock.png" alt="" width={32} height={32} className="object-contain" />
                 </div>
-              ))}
+                <div className="relative z-10 mt-8">
+                  <h3 className="text-base font-black text-[#0A0A0A] mb-1">100% Private</h3>
+                  <p className="text-sm text-[#666] leading-relaxed">Your data stays on your device. No servers, no cloud.</p>
+                </div>
+              </div>
+
+              {/* Blue — No Ads */}
+              <div className="relative rounded-3xl overflow-hidden p-6 flex flex-col min-h-[220px]"
+                style={{background:"linear-gradient(145deg,#dbeafe 0%,#e0f2fe 60%,#eff6ff 100%)", border:"1.5px solid #1579fb25"}}>
+                <div className="absolute top-0 left-0 w-40 h-40 rounded-full pointer-events-none"
+                  style={{background:"radial-gradient(circle, #1579fb30 0%, transparent 70%)", transform:"translate(-30%,-30%)"}} />
+                <div className="relative z-10 w-12 h-12 rounded-2xl flex items-center justify-center mb-auto">
+                  <Image src="/noads.png" alt="" width={32} height={32} className="object-contain" />
+                </div>
+                <div className="relative z-10 mt-8">
+                  <h3 className="text-base font-black text-[#0A0A0A] mb-1">Zero Ads</h3>
+                  <p className="text-sm text-[#666] leading-relaxed">Train without interruptions. No banners, no popups, ever.</p>
+                </div>
+              </div>
+
+              {/* Green — No Sign-up */}
+              <div className="relative rounded-3xl overflow-hidden p-6 flex flex-col min-h-[220px]"
+                style={{background:"linear-gradient(145deg,#dcfce7 0%,#d1fae5 60%,#f0fdf4 100%)", border:"1.5px solid #36c55d25"}}>
+                <div className="absolute top-0 left-0 w-40 h-40 rounded-full pointer-events-none"
+                  style={{background:"radial-gradient(circle, #36c55d30 0%, transparent 70%)", transform:"translate(-30%,-30%)"}} />
+                <div className="relative z-10 w-12 h-12 rounded-2xl flex items-center justify-center mb-auto">
+                  <Image src="/account.png" alt="" width={32} height={32} className="object-contain" />
+                </div>
+                <div className="relative z-10 mt-8">
+                  <h3 className="text-base font-black text-[#0A0A0A] mb-1">No Sign-up</h3>
+                  <p className="text-sm text-[#666] leading-relaxed">Open the app and start instantly. No email, no account.</p>
+                </div>
+              </div>
+
+              {/* Yellow — Multilingual */}
+              <div className="relative rounded-3xl overflow-hidden p-6 flex flex-col min-h-[220px]"
+                style={{background:"linear-gradient(145deg,#fef9c3 0%,#fef3c7 60%,#fffbeb 100%)", border:"1.5px solid #fdcb2940"}}>
+                <div className="absolute top-0 left-0 w-40 h-40 rounded-full pointer-events-none"
+                  style={{background:"radial-gradient(circle, #fdcb2940 0%, transparent 70%)", transform:"translate(-30%,-30%)"}} />
+                <div className="relative z-10 w-12 h-12 rounded-2xl flex items-center justify-center mb-auto">
+                  <Image src="/translate.png" alt="" width={32} height={32} className="object-contain" />
+                </div>
+                <div className="relative z-10 mt-8">
+                  <h3 className="text-base font-black text-[#0A0A0A] mb-1">Multilingual</h3>
+                  <p className="text-sm text-[#666] leading-relaxed">English and Spanish. Metric and imperial units supported.</p>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
+
+
         {/* ── How it works ── */}
         <section className="py-20 px-6 md:px-12 border border-black/[0.06] rounded-b-[4rem] bg-[#f7f7f7] ">
           <div className="max-w-6xl mx-auto">
