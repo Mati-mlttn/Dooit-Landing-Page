@@ -37,7 +37,7 @@ export default function Home() {
     <div className="min-h-screen bg-black text-[#0A0A0A] font-sans antialiased">
       <main className="relative z-10 bg-[#f7f7f7] rounded-b-[3rem] sm:rounded-b-[4rem] shadow-2xl overflow-hidden">
         {/* ── Nav ── */}
-        <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 md:px-12 border-b border-black/[0.06] bg-white/90 backdrop-blur-md">
+        <header className="fixed top-0 left-0 right-0 z-50 grid grid-cols-3 items-center px-6 py-4 md:px-12 border-b border-black/[0.06] bg-white/90 backdrop-blur-md">
           <Image
             src="/logo.png"
             alt="Doo It! app on device"
@@ -46,7 +46,7 @@ export default function Home() {
             className="object-contain"
             priority
           />
-          <nav className="hidden md:flex items-center gap-8 text-sm text-[#888]">
+          <nav className="hidden md:flex items-center justify-center gap-8 text-sm text-[#888]">
             <a
               href="#features"
               className="hover:text-[#0A0A0A] transition-colors"
@@ -57,12 +57,7 @@ export default function Home() {
               Why Doo It
             </a>
           </nav>
-          <a
-            href="#download"
-            className="text-sm font-bold px-5 py-2 rounded-full bg-[#1579fb] text-white hover:bg-[#606060] transition-colors"
-          >
-            Download free
-          </a>
+          <div />
         </header>
 
         {/* ── Hero ── */}
@@ -72,7 +67,6 @@ export default function Home() {
           {/* Left */}
           <div className="relative flex flex-col items-center lg:items-start text-center lg:text-left flex-1 z-10">
             <p className="mb-6 inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-black border-[3.5px] border-white rounded-full px-4 py-3 shadow-[0_0_20px_rgba(61,220,132,0.4)]">
-              {/* <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" /> */}
               <Image
                 src="/android.png"
                 alt="Doo It! app on device"
@@ -81,7 +75,8 @@ export default function Home() {
                 className="object-contain"
                 priority
               />
-              Soon on Android
+              {/* <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" /> */}
+              Now on Android
             </p>
 
             <h1
@@ -93,7 +88,7 @@ export default function Home() {
               <br />
               Your program.
               <br />
-              <Image src="/dooit.png" alt="" width={300} height={50} />
+              <Image src="/dooit.png" alt="" width={300} height={50} className="pt-5" />
             </h1>
 
             <p className="mt-7 max-w-md text-lg leading-relaxed text-[#666]">
@@ -101,15 +96,39 @@ export default function Home() {
               no sign-up — just training.
             </p>
 
-            {/*<div className="mt-9 flex flex-col sm:flex-row items-center gap-4">
-            <a
-              href="#"
-              className="flex items-center justify-center px-8 py-3.5 rounded-full border border-black/15 text-[#0A0A0A] text-base font-bold hover:bg-black/5 transition-colors"
-            >
-              Google Play
-            </a>
-          </div>
-          */}
+
+
+
+            <div className="mt-9 flex flex-col sm:flex-row items-center gap-4">
+              <a
+                href="https://github.com/Mati-mlttn/DooIt-Fitness"
+                className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#262626] border border-black/15 text-[#FFFFFF] text-base font-bold hover:bg-[#505050] transition-colors"
+              >
+                <Image
+                  src="/github-logo.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                  style={{filter: "invert(1)"}}
+                />
+                GitHub
+              </a>
+
+              <a
+                href="#"
+                className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border bg-[#EAEAEA] border-black/1 text-[#0A0A0A] text-base font-bold hover:bg-black/5 transition-colors"
+              >
+                <Image
+                  src="/google-play.png"
+                  alt=""
+                  width={20}
+                  height={20}
+                  className="object-contain"
+                />
+                Soon
+              </a>
+            </div>
           </div>
 
           {/* Right */}
