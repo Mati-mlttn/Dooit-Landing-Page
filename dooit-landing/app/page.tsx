@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Doo It! — Your personal workout app",
+  title: "Doo It! - Your personal workout app",
   description:
     "800+ illustrated exercises. Strength and cardio routines. No ads, no sign-up, 100% private.",
 };
@@ -35,77 +35,64 @@ const ticker = [
 export default function Home() {
   return (
     <div className="min-h-screen bg-black text-[#0A0A0A] font-sans antialiased">
-      <main className="relative z-10 bg-[#f7f7f7] rounded-b-[3rem] sm:rounded-b-[4rem] shadow-2xl overflow-hidden">
+      <main className="relative z-10 bg-[#ffffff] overflow-hidden">
         {/* ── Nav ── */}
-        <header className="fixed top-0 left-0 right-0 z-50 grid grid-cols-3 items-center px-6 py-4 md:px-12 border-b border-black/[0.06] bg-white/90 backdrop-blur-md">
-          <Image
-            src="/logo.png"
-            alt="Doo It! app on device"
-            width={40}
-            height={40}
-            className="object-contain"
-            priority
-          />
-          <nav className="hidden md:flex items-center justify-center gap-8 text-sm text-[#888]">
+        <header className="fixed top-0 left-0 right-0 z-50 border-b border-black/[0.06] bg-[#f7f7f7]/70 backdrop-blur-xl">
+          <div className="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between px-5 md:px-10 lg:px-14">
+            <a href="#" className="flex items-center gap-3" aria-label="Doo It! home">
+              <Image
+                src="/logo.png"
+                alt=""
+                width={42}
+                height={42}
+                className="object-contain"
+                priority
+              />
+              <Image src="/dooit.png" alt="" width={80} height={80} priority />
+            </a>
+          <nav className="hidden md:flex items-center justify-center gap-8 text-sm font-semibold text-[#686868]">
             <a
               href="#features"
               className="hover:text-[#0A0A0A] transition-colors"
             >
               Features
             </a>
-            <a href="#why" className="hover:text-[#0A0A0A] transition-colors">
-              Why Doo It
+            <a href="https://app.notion.com/p/Privacy-Policy-Doo-It-2ae0fe38e5c78041abd7f3269a35583f?source=copy_link" className="hover:text-[#0A0A0A] transition-colors">
+              Privacy Policy
             </a>
           </nav>
-          <div />
+          </div>
         </header>
 
         {/* ── Hero ── */}
-        <section className="relative min-h-screen flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 pt-28 pb-16 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto overflow-hidden">
-          {/* subtle bg accent */}
-
-          {/* Left */}
-          <div className="relative flex flex-col items-center lg:items-start text-center lg:text-left flex-1 z-10">
-            <p className="mb-6 inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-black border-[3.5px] border-white rounded-full px-4 py-3 shadow-[0_0_20px_rgba(61,220,132,0.4)]">
+        <section className="relative flex min-h-[920px] flex-col items-center overflow-hidden px-5 pb-20 pt-36 text-center md:min-h-[1040px] md:pt-30">
+          <div className="pointer-events-none absolute left-1/2 top-[34rem] h-[620px] w-[min(1100px,95vw)] -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(21,121,251,0.18),rgba(61,220,132,0.10)_42%,transparent_70%)] blur-2xl" />
+          <div className="relative z-10 flex max-w-4xl flex-col items-center">
+            <p className="mb-7 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-xs font-extrabold uppercase tracking-[0.16em] text-black shadow-sm">
               <Image
                 src="/android.png"
-                alt="Doo It! app on device"
-                width={40}
-                height={40}
+                alt=""
+                width={20}
+                height={20}
                 className="object-contain"
                 priority
               />
-              {/* <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" /> */}
-              Now on Android
+              Built for Android
             </p>
 
-            <h1
-              className={
-                "max-w-xl text-5xl md:text-6xl lg:text-7xl font-black leading-[0.92] tracking-tight text-[#c9c9c9]"
-              }
-            >
-              Your body.
-              <br />
-              Your program.
-              <br />
-              <Image
-                src="/dooit.png"
-                alt=""
-                width={300}
-                height={50}
-                className="pt-5"
-              />
+            <h1 className="max-w-4xl text-[clamp(3.25rem,8vw,5.25rem)] font-black leading-[0.88] tracking-[-0.075em] text-[#111]">
+              Your workout. Your way.
             </h1>
 
-            <p className="mt-7 max-w-md text-lg leading-relaxed text-[#666]">
+            <p className="mt-7 max-w-xl text-base leading-relaxed text-[#626262] md:text-xl">
               800+ illustrated exercises. Strength and cardio routines. No ads,
               no sign-up — just training.
             </p>
 
-            <div className="mt-9 flex flex-col sm:flex-row items-center gap-4">
+            <div className="mt-9 flex flex-col items-center gap-5 sm:flex-row">
               <a
                 href="https://github.com/Mati-mlttn/DooIt-Fitness"
-                className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#262626] border border-black/15 text-[#FFFFFF] text-base font-bold hover:bg-[#505050] transition-colors"
+                className="inline-flex h-14 w-fit items-center justify-center gap-2 rounded-full bg-[#171717] px-8 text-base font-bold text-white shadow-lg shadow-black/10 transition-transform duration-200 hover:scale-[1.04] active:scale-[0.98]"
               >
                 <Image
                   src="/github-logo.png"
@@ -115,33 +102,21 @@ export default function Home() {
                   className="object-contain"
                   style={{ filter: "invert(1)" }}
                 />
-                GitHub
+                View on GitHub
               </a>
 
-              <a
-                href="#"
-                className="flex items-center justify-center gap-2 px-8 py-3.5 rounded-full border bg-[#EAEAEA] border-black/1 text-[#0A0A0A] text-base font-bold hover:bg-black/5 transition-colors"
-              >
-                <Image
-                  src="/google-play.png"
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="object-contain"
-                />
-                Soon
-              </a>
+              <span className="text-sm font-semibold text-[#777]">Free · Private · No account</span>
             </div>
           </div>
 
-          {/* Right */}
-          <div className="relative flex-shrink-0 w-[300px] md:w-[360px] lg:w-[400px] z-10">
+          <div className="relative z-10 mt-5 w-[380px] translate-y-6 md:mt-5 md:w-[490px] lg:w-[590px]">
+            <div className="home-halo" />
             <Image
               src="/home.png"
-              alt=""
-              width={400}
-              height={800}
-              className="w-full h-auto object-contain drop-shadow-2xl"
+              alt="Doo It! workout dashboard"
+              width={900}
+              height={900}
+              className="h-auto w-full object-contain drop-shadow-[0_35px_45px_rgba(0,0,0,0.22)]"
               priority
             />
           </div>
@@ -150,7 +125,7 @@ export default function Home() {
         {/* ── Ticker ── */}
         <div
           aria-hidden
-          className="py-5 border-y border-black/[0.06] overflow-hidden bg-[#f7f7f7]"
+          className="py-5 border-y border-black/[0.06] overflow-hidden bg-[#ffffff]"
         >
           <div className="flex gap-12 animate-[ticker_50s_linear_infinite] whitespace-nowrap w-max">
             {[...ticker, ...ticker].map((item, i) => (
@@ -166,32 +141,20 @@ export default function Home() {
         </div>
 
         {/* ── Full-width mockup showcase ── */}
-        {/* Mobile / small screens — zoomed crop, fixed height, no shrinking */}
-        <div className="relative w-full h-[340px] sm:h-[420px] md:hidden">
-          <Image
-            src="/full.png"
-            alt="..."
-            fill
-            className="object-cover object-center"
-            priority
-          />
-        </div>
-
-        {/* Tablet and up — full natural width */}
-        <div className="hidden md:block">
+        <div className="mockup-showcase">
           <Image
             src="/full-features.png"
-            alt="..."
+            alt="Doo It! screens showing workouts, progress, muscles and reminders"
             width={4200}
-            height={1632.32}
-            className="w-full h-auto"
+            height={1633}
+            className="mockup-showcase-image"
             priority
           />
         </div>
 
         <div
           aria-hidden
-          className="py-5 border-y border-black/[0.06] overflow-hidden bg-[#f7f7f7]"
+          className="py-5 border-y border-black/[0.06] overflow-hidden bg-[#ffffff]"
         >
           <div className="flex gap-12 animate-[ticker_50s_linear_infinite] whitespace-nowrap w-max">
             {[...ticker, ...ticker].map((item, i) => (
@@ -206,290 +169,224 @@ export default function Home() {
           </div>
         </div>
 
-        {/* ── Features Bento ── */}
+        {/* ── Core journey ── */}
         <section
           id="features"
-          className="py-28 pt-15 px-6 md:px-12 bg-[#f7f7f7]"
+          className="scroll-mt-[72px] bg-[#ffffff] px-5 py-24 md:px-12 md:py-24"
         >
-          <div className="max-w-6xl mx-auto">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#626262] mb-4 px-14">
-              Features
-            </p>
-            <h2 className="flex items-start gap-3 text-4xl md:text-5xl font-black tracking-tight leading-tight max-w-xl mb-16 text-[#0A0A0A]">
-              <Image
-                src="/sparkle.png"
-                alt=""
-                width={40}
-                height={40}
-                className="py-3"
-                priority
-              />
-              Everything you need to train seriously.
-            </h2>
-
-            <div className="w-full">
-              <Image
-                src="/bento.png"
-                alt="Doo It Features Bento"
-                width={5598}
-                height={4707}
-                className="w-full h-auto"
-                priority
-              />
+          <div className="mx-auto max-w-[1440px]">
+            <div className="mx-auto mb-14 max-w-2xl text-center md:mb-20">
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#777]">
+                Made for every workout
+              </p>
+              <h2 className="text-4xl font-black leading-[0.98] tracking-[-0.055em] text-[#111] md:text-6xl">
+                Everything you need to train better.
+              </h2>
+              <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#686868] md:text-lg">
+                Find the right exercise, build a routine around your goals, and
+                stay focused through every set.
+              </p>
             </div>
-          </div>
-        </section>
 
-        {/* ── Why Doo It ── */}
-        <section
-          id="why"
-          className="py-20 px-6 md:px-12 border-t border-black/[0.06] bg-[#f7f7f7]"
-        >
-          <div className="max-w-6xl mx-auto">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#626262] mb-4 px-14">
-              Why Doo It!
-            </p>
-            <h2 className="flex items-start gap-3 text-4xl md:text-5xl font-black tracking-tight leading-tight mb-16 max-w-lg text-[#0A0A0A]">
-              <Image
-                src="/nop.png"
-                alt=""
-                width={40}
-                height={40}
-                className="py-3"
-                priority
-              />
-              No tricks. No surprise subscriptions.
-            </h2>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {/* Purple — Private */}
-              <div
-                className="relative rounded-3xl overflow-hidden p-6 flex flex-col min-h-[220px]"
-                style={{
-                  background:
-                    "linear-gradient(145deg,#f3e8ff 0%,#ede9fe 60%,#f5f0ff 100%)",
-                  border: "1.5px solid #882edd25",
-                }}
-              >
-                <div
-                  className="absolute top-0 left-0 w-40 h-40 rounded-full pointer-events-none"
-                  style={{
-                    background:
-                      "radial-gradient(circle, #882edd30 0%, transparent 70%)",
-                    transform: "translate(-30%,-30%)",
-                  }}
-                />
-                <div className="relative z-10 w-12 h-12 rounded-2xl flex items-center justify-center mb-auto">
-                  <Image
-                    src="/lock.png"
-                    alt=""
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="relative z-10 mt-8">
-                  <h3 className="text-base font-black text-[#0A0A0A] mb-1">
-                    100% Private
-                  </h3>
-                  <p className="text-sm text-[#666] leading-relaxed">
-                    Your data stays on your device. No servers, no cloud.
-                  </p>
-                </div>
-              </div>
-
-              {/* Blue — No Ads */}
-              <div
-                className="relative rounded-3xl overflow-hidden p-6 flex flex-col min-h-[220px]"
-                style={{
-                  background:
-                    "linear-gradient(145deg,#dbeafe 0%,#e0f2fe 60%,#eff6ff 100%)",
-                  border: "1.5px solid #1579fb25",
-                }}
-              >
-                <div
-                  className="absolute top-0 left-0 w-40 h-40 rounded-full pointer-events-none"
-                  style={{
-                    background:
-                      "radial-gradient(circle, #1579fb30 0%, transparent 70%)",
-                    transform: "translate(-30%,-30%)",
-                  }}
-                />
-                <div className="relative z-10 w-12 h-12 rounded-2xl flex items-center justify-center mb-auto">
-                  <Image
-                    src="/noads.png"
-                    alt=""
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="relative z-10 mt-8">
-                  <h3 className="text-base font-black text-[#0A0A0A] mb-1">
-                    Zero Ads
-                  </h3>
-                  <p className="text-sm text-[#666] leading-relaxed">
-                    Train without interruptions. No banners, no popups, ever.
-                  </p>
-                </div>
-              </div>
-
-              {/* Green — No Sign-up */}
-              <div
-                className="relative rounded-3xl overflow-hidden p-6 flex flex-col min-h-[220px]"
-                style={{
-                  background:
-                    "linear-gradient(145deg,#dcfce7 0%,#d1fae5 60%,#f0fdf4 100%)",
-                  border: "1.5px solid #36c55d25",
-                }}
-              >
-                <div
-                  className="absolute top-0 left-0 w-40 h-40 rounded-full pointer-events-none"
-                  style={{
-                    background:
-                      "radial-gradient(circle, #36c55d30 0%, transparent 70%)",
-                    transform: "translate(-30%,-30%)",
-                  }}
-                />
-                <div className="relative z-10 w-12 h-12 rounded-2xl flex items-center justify-center mb-auto">
-                  <Image
-                    src="/account.png"
-                    alt=""
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="relative z-10 mt-8">
-                  <h3 className="text-base font-black text-[#0A0A0A] mb-1">
-                    No Sign-up
-                  </h3>
-                  <p className="text-sm text-[#666] leading-relaxed">
-                    Open the app and start instantly. No email, no account.
-                  </p>
-                </div>
-              </div>
-
-              {/* Yellow — Multilingual */}
-              <div
-                className="relative rounded-3xl overflow-hidden p-6 flex flex-col min-h-[220px]"
-                style={{
-                  background:
-                    "linear-gradient(145deg,#fef9c3 0%,#fef3c7 60%,#fffbeb 100%)",
-                  border: "1.5px solid #fdcb2940",
-                }}
-              >
-                <div
-                  className="absolute top-0 left-0 w-40 h-40 rounded-full pointer-events-none"
-                  style={{
-                    background:
-                      "radial-gradient(circle, #fdcb2940 0%, transparent 70%)",
-                    transform: "translate(-30%,-30%)",
-                  }}
-                />
-                <div className="relative z-10 w-12 h-12 rounded-2xl flex items-center justify-center mb-auto">
-                  <Image
-                    src="/translate.png"
-                    alt=""
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                  />
-                </div>
-                <div className="relative z-10 mt-8">
-                  <h3 className="text-base font-black text-[#0A0A0A] mb-1">
-                    Multilingual
-                  </h3>
-                  <p className="text-sm text-[#666] leading-relaxed">
-                    English and Spanish. Metric and imperial units supported.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── How it works ── */}
-        <section className="py-20 px-6 md:px-12 border border-black/[0.06] rounded-b-[4rem] bg-[#f7f7f7] ">
-          <div className="max-w-6xl mx-auto">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#626262] mb-4 px-14">
-              How it works
-            </p>
-            <h2 className="flex items-start gap-3 text-4xl md:text-5xl font-black tracking-tight leading-tight mb-16 max-w-sm text-[#0A0A0A]">
-              <Image
-                src="/muscle.png"
-                alt=""
-                width={40}
-                height={40}
-                className="py-3"
-                priority
-              />
-              Start training today.
-            </h2>
-
-            <div className="grid md:grid-cols-3 gap-10">
+            <div className="grid items-start gap-7 md:grid-cols-3">
               {[
                 {
-                  n: "1",
-                  title: "Download the app",
-                  body: "No account. No email. Open the app and you're already in.",
+                  title: "Explore",
+                  body: "Find the right exercise from among more than 800 illustrated exercises organized by muscle group.",
+                  background: "#ebf0f8",
+                  accent: "#e44940",
+                  image: "/Explore.png",
                 },
                 {
-                  n: "2",
-                  title: "Build your routine",
-                  body: "Pick exercises from the library or create your own. Set up your week in minutes.",
+                  title: "Build",
+                  body: "Create strength and cardio routines that fit your goals, your schedule, and the equipment you have.",
+                  background: "#ebf0f8",
+                  accent: "#1579fb",
+                  image: "/build.png",
                 },
                 {
-                  n: "3",
-                  title: "Train and track",
-                  body: "Follow your progress in real time. Every set, every rep, every calories saved on your device.",
+                  title: "Train",
+                  body: "Follow every exercise, set, and repetition in a simple workout experience that keeps you moving.",
+                  background: "#ebf0f8",
+                  accent: "#2db062",
+                  image: "/Train.png",
                 },
-              ].map(({ n, title, body }) => (
-                <div key={n} className="flex flex-col gap-4">
-                  <span className="text-7xl font-black text-black leading-none select-none">
-                    {n}
-                  </span>
-                  <h3 className="text-xl font-black text-[#0A0A0A]">{title}</h3>
-                  <p className="text-sm leading-relaxed text-[#777]">{body}</p>
-                </div>
+              ].map(({ title, body, background, accent, image }) => (
+                <article
+                  key={title}
+                  className="relative mx-auto w-full max-w-3xl overflow-hidden rounded-[2rem] md:max-w-none"
+                  style={{ background }}
+                >
+                  <div className="flex flex-col p-7 pb-6 md:p-10 md:pb-7">
+                    <h3 className="text-4xl font-black tracking-[-0.04em] text-[#111]">
+                      {title}
+                    </h3>
+                    <p className="mt-3 text-xl leading-7 text-[#626262]">
+                      {body}
+                    </p>
+                  </div>
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-[50%]"
+                    style={{
+                      background: `linear-gradient(to bottom, transparent 0%, ${accent}18 32%, ${accent}55 100%)`,
+                    }}
+                  />
+                  <div className="relative z-10 mx-3 mt-1 aspect-4/5 overflow-hidden rounded-t-[1.5rem]">
+                    <Image
+                      src={image}
+                      alt={`${title} in Doo It!`}
+                      width={900}
+                      height={1880}
+                      sizes="(max-width: 1024px) 100vw, 33vw"
+                      className="absolute left-1/2 top-0 h-auto w-[85%] max-w-none -translate-x-1/2"
+                    />
+                  </div>
+                </article>
               ))}
             </div>
+
+            <article className="relative mt-7 flex min-h-[48rem] flex-col overflow-hidden rounded-[2rem] bg-[#eff1f8] lg:block lg:min-h-[42rem]">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_76%,rgba(137,46,222,0.38),rgba(137,46,222,0.1)_32%,transparent_58%)] lg:bg-[radial-gradient(circle_at_18%_78%,rgba(137,46,222,0.58),rgba(137,46,222,0.14)_30%,transparent_57%)]"
+              />
+
+              <div className="relative z-20 mx-auto max-w-md px-7 pb-3 pt-9 text-center lg:ml-auto lg:mr-0 lg:max-w-[52%] lg:p-16 lg:text-left">
+                <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#777] lg:mb-5 lg:text-xs">
+                  Training insights
+                </p>
+                <h3 className="text-[2.35rem] font-black leading-[0.98] tracking-[-0.055em] text-[#111] sm:text-5xl lg:text-6xl">
+                  See your progress at a glance.
+                </h3>
+                <p className="mx-auto mt-4 max-w-sm text-base leading-6 text-[#626262] lg:mx-0 lg:mt-6 lg:max-w-md lg:text-xl lg:leading-8">
+                  Turn every session into clear charts and detailed reports.
+                  See your exercises, sets, reps, and training history in one
+                  visual summary.
+                </p>
+              </div>
+
+              <div className="relative z-10 mx-auto mb-8 mt-auto h-[29rem] sm:h-[34rem] lg:absolute lg:left-[3%] lg:top-1/2 lg:mx-0 lg:mb-0 lg:mt-0 lg:h-[86%] lg:-translate-y-1/2">
+                <Image
+                  src="/report-3.png"
+                  alt="Workout charts and detailed training reports in Doo It!"
+                  width={1715}
+                  height={1927}
+                  sizes="(max-width: 767px) 420px, (max-width: 1024px) 460px, 580px"
+                  unoptimized
+                  className="h-full w-auto drop-shadow-[0_32px_50px_rgba(20,28,70,0.2)]"
+                />
+              </div>
+            </article>
+
+            <article className="relative mt-7 flex min-h-[48rem] flex-col overflow-hidden rounded-[2rem] bg-[#eff1f8] lg:block lg:min-h-[42rem]">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_76%,rgba(253,254,60,0.58),rgba(253,254,60,0.14)_32%,transparent_58%)] lg:bg-[radial-gradient(circle_at_82%_78%,rgba(253,254,60,0.85),rgba(253,254,60,0.18)_30%,transparent_57%)]"
+              />
+
+              <div className="relative z-20 mx-auto max-w-md px-7 pb-3 pt-9 text-center lg:mx-0 lg:max-w-[52%] lg:p-16 lg:text-left">
+                <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#777] lg:mb-5 lg:text-xs">
+                  Made to be yours
+                </p>
+                <h3 className="text-[2.35rem] font-black leading-[0.98] tracking-[-0.055em] text-[#111] sm:text-5xl lg:text-6xl">
+                  Make every workout worth sharing.
+                </h3>
+                <p className="mx-auto mt-4 max-w-sm text-base leading-6 text-[#626262] lg:mx-0 lg:mt-6 lg:max-w-md lg:text-xl lg:leading-8">
+                  Turn your training into a visual recap you can save, share,
+                  and feel proud of—from the first set to the last rep.
+                </p>
+              </div>
+
+              <div className="relative z-10 mx-auto mb-8 mt-auto h-[29rem] sm:h-[34rem] lg:absolute lg:right-[2%] lg:top-1/2 lg:mx-0 lg:mb-0 lg:mt-0 lg:h-[86%] lg:-translate-y-1/2">
+                <Image
+                  src="/share.png"
+                  alt="Shareable workout recap in Doo It!"
+                  width={1715}
+                  height={1927}
+                  sizes="(max-width: 767px) 420px, (max-width: 1024px) 460px, 580px"
+                  unoptimized
+                  className="h-full w-auto drop-shadow-[0_32px_50px_rgba(20,28,70,0.2)]"
+                />
+              </div>
+            </article>
+
+            <article className="relative mt-7 flex min-h-[24rem] items-center overflow-hidden rounded-[2rem] bg-[#141414] px-7 py-14 text-white sm:px-12 lg:px-16">
+              <Image
+                src="/locked.png"
+                alt=""
+                aria-hidden="true"
+                width={512}
+                height={512}
+                className="pointer-events-none absolute left-1/2 top-1/2 h-[68%] w-auto -translate-x-1/2 -translate-y-1/2 object-contain opacity-10"
+              />
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(255,255,255,0.2),rgba(255,255,255,0.05)_28%,transparent_62%)]"
+              />
+              <div className="relative z-10 mx-auto max-w-3xl text-center">
+                <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-white/55 sm:text-xs">
+                  Privacy by design
+                </p>
+                <h3 className="text-[2.35rem] font-black leading-[0.98] tracking-[-0.055em] sm:text-5xl lg:text-6xl">
+                  Your workouts stay yours.
+                </h3>
+                <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/65 sm:text-lg lg:text-xl lg:leading-8">
+                  No account, no cloud, and no tracking. Your routines and
+                  training history stay securely on your device, under your
+                  control.
+                </p>
+              </div>
+            </article>
           </div>
         </section>
-      </main>
 
-      {/* ── Final CTA ── */}
-      <section className="py-28 px-6 md:px-12 border-t border-black/[0.06] text-center bg-black">
-        <div className="max-w-2xl mx-auto flex flex-col items-center gap-6">
-          <h2 className="text-5xl md:text-6xl font-black tracking-tight leading-tight text-white">
-            The only workout that fails
-            <br />
-            is the one you{" "}
-            <span className="text-[#1579fb]">don&apos;t do.</span>
-          </h2>
-          <p className="text-[#777] text-lg max-w-sm">
-            Download Doo It! for free. No sign-up, no ads, no excuses.
-          </p>
-          {/*
-          <div className="flex flex-col sm:flex-row gap-4">
+        <div className="mx-auto max-w-[1440px]">
+          <div className="mx-auto mb-14 max-w-2xl text-center md:mb-20">
+            <h2 className="text-4xl font-black leading-[0.98] tracking-[-0.055em] text-[#111] md:text-6xl">
+              Grab everything you need and get started.
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#686868] md:text-lg">
+              Choose your exercises, build a routine around your goals, and
+              start training. Doo It! keeps everything else simple.
+            </p>
             <a
-              href="#"
-              className="disabled flex items-center justify-center gap-2 h-14 px-8 rounded-full border border-black/15 text-[#0A0A0A] text-base font-bold hover:bg-black/5 transition-colors"
+              href="https://github.com/Mati-mlttn/DooIt-Fitness"
+              className="mx-auto mt-6 inline-flex h-11 w-fit items-center justify-center gap-2 rounded-full bg-[#171717] px-8 text-base font-bold text-white shadow-lg shadow-black/10 transition-transform duration-200 hover:scale-[1.04] active:scale-[0.98]"
             >
-              Google Play
+              <Image
+                src="/github-logo.png"
+                alt=""
+                width={20}
+                height={20}
+                className="object-contain"
+                style={{ filter: "invert(1)" }}
+              />
+              View on GitHub
             </a>
           </div>
-          */}
         </div>
-      </section>
+        <div className="mockup-showcase">
+          <Image
+            src="/full.png"
+            alt="Doo It! screens showing workouts, progress, muscles and reminders"
+            width={4200}
+            height={1633}
+            className="mockup-showcase-image"
+            priority
+          />
+          </div>
+      </main>
+
+
 
       {/* ── Footer ── */}
-      <footer className="py-10 px-6 md:px-12 border-t border-[#262626] bg-black">
+      <footer className="py-10 px-6 md:px-12  bg-[#FFFFFF]">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#999]">
-          <Image src="/dooit2.png" alt="" width={80} height={80} priority />
+          <Image src="/dooit.png" alt="" width={80} height={80} priority />
 
           <div className="flex gap-8">
-            <Image src="/gosht.png" alt="" width={90} height={90} priority />
+            <Image src="/gosht-2.png" alt="" width={90} height={90} priority />
           </div>
           <span>© {new Date().getFullYear()} Doo It!</span>
         </div>

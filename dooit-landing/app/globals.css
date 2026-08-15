@@ -23,3 +23,62 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.home-halo {
+  position: absolute;
+  z-index: -1;
+  top: -17%;
+  left: 50%;
+  width: 220%;
+  height: 125%;
+  pointer-events: none;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(21, 121, 251, 0.18) 42%,
+    rgba(21, 121, 251, 0.08) 59%,
+    transparent 76%
+  );
+  filter: blur(58px);
+}
+
+@media (max-width: 640px) {
+  .home-halo {
+    width: 190%;
+    height: 118%;
+    filter: blur(42px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/*
+ * The image starts at its natural full-width size on large screens. Between
+ * 1440px and 720px it progressively grows relative to the viewport, then it
+ * stops at a concrete 1080px width (roughly 420px tall) on smaller screens.
+ */
+.mockup-showcase {
+  width: 100%;
+  overflow: hidden;
+  background: #d7d7d7;
+}
+
+.mockup-showcase-image {
+  position: relative;
+  left: 50%;
+  display: block;
+  width: max(100%, 1080px, calc(50vw + 720px));
+  max-width: none;
+  height: auto;
+  transform: translateX(-50%);
+}
