@@ -1,66 +1,70 @@
 import Image from "next/image";
 import type { Metadata } from "next";
+import en from "@/dictionaries/en.json";
+import type { Dictionary } from "@/lib/i18n";
 
-export const metadata: Metadata = {
-  title: "Doo It! - Your personal workout app",
-  description:
-    "800+ illustrated exercises. Strength and cardio routines. No ads, no sign-up, 100% private.",
-};
+export const metadata: Metadata = en.metadata;
 
-const ticker = [
-  "Squat",
-  "Deadlift",
-  "Bench Press",
-  "Pull-up",
-  "Overhead Press",
-  "Hip Thrust",
-  "Barbell Row",
-  "Dips",
-  "Bicep Curl",
-  "Plank",
-  "Burpees",
-  "Tricep Extension",
-  "Lat Pulldown",
-  "Incline Bench Press",
-  "Leg Press",
-  "Romanian Deadlift",
-  "Walking Lunges",
-  "Bulgarian Split Squat",
-  "Leg Curl",
-  "Leg Extension",
-  "Lateral Raise",
-  "Hammer Curl",
+const featureVisuals = [
+  { background: "#ebf0f8", accent: "#e44940", image: "/Explore.png" },
+  { background: "#ebf0f8", accent: "#1579fb", image: "/build.png" },
+  { background: "#ebf0f8", accent: "#2db062", image: "/Train.png" },
 ];
 
-export default function Home() {
+type LandingPageProps = {
+  dictionary: Dictionary;
+};
+
+export function LandingPage({ dictionary }: LandingPageProps) {
+  const ticker = dictionary.ticker;
+
   return (
     <div className="min-h-screen bg-black text-[#0A0A0A] font-sans antialiased">
       <main className="relative z-10 bg-[#ffffff] overflow-hidden">
         {/* ── Nav ── */}
-        <header className="fixed top-0 left-0 right-0 z-50 border-b border-black/[0.06] bg-[#f7f7f7]/70 backdrop-blur-xl">
-          <div className="mx-auto flex h-[72px] max-w-[1440px] items-center justify-between px-5 md:px-10 lg:px-14">
-            <a href="#" className="flex items-center gap-3" aria-label="Doo It! home">
+        <header className="fixed left-1/2 top-4 z-50 w-[calc(100%_-_2rem)] max-w-[1400px] -translate-x-1/2 rounded-xl border border-gray-400/15 bg-white/75 shadow-[0_12px_40px_rgba(20,20,20,0.10)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/65">
+          <div className="flex h-14 items-center justify-start px-4 md:h-15 md:justify-between md:px-5">
+            <a href="#" className="flex items-center gap-3" aria-label={dictionary.nav.homeLabel}>
               <Image
                 src="/logo.png"
                 alt=""
-                width={42}
-                height={42}
-                className="object-contain"
+                width={38}
+                height={38}
+                className="h-8 w-8 object-contain md:h-[38px] md:w-[38px]"
                 priority
               />
-              <Image src="/dooit.png" alt="" width={80} height={80} priority />
+              <Image
+                src="/dooit.png"
+                alt=""
+                width={78}
+                height={78}
+                className="h-auto w-[78px] md:w-[78px]"
+                priority
+              />
             </a>
-          <nav className="hidden md:flex items-center justify-center gap-8 text-sm font-semibold text-[#686868]">
-            <a
-              href="#features"
-              className="hover:text-[#0A0A0A] transition-colors"
-            >
-              Features
-            </a>
-            <a href="https://app.notion.com/p/Privacy-Policy-Doo-It-2ae0fe38e5c78041abd7f3269a35583f?source=copy_link" className="hover:text-[#0A0A0A] transition-colors">
-              Privacy Policy
-            </a>
-          </nav>
+            <nav className="hidden items-center justify-center gap-7 text-sm font-semibold text-[#686868] md:flex">
+              <a
+                href="#features"
+                className="transition-colors hover:text-[#0A0A0A]"
+              >
+                {dictionary.nav.features}
+              </a>
+              <a
+                href="https://app.notion.com/p/Privacy-Policy-Doo-It-2ae0fe38e5c78041abd7f3269a35583f?source=copy_link"
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-1.5 transition-colors hover:text-[#0A0A0A]"
+              >
+                {dictionary.nav.privacy}
+                <svg
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                  className="h-3.5 w-3.5 fill-none stroke-current stroke-[1.6] transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                >
+                  <path d="M4 12 12 4M6 4h6v6" />
+                </svg>
+              </a>
+            </nav>
           </div>
         </header>
 
@@ -77,16 +81,15 @@ export default function Home() {
                 className="object-contain"
                 priority
               />
-              Built for Android
+              {dictionary.hero.badge}
             </p>
 
             <h1 className="max-w-4xl text-[clamp(3.25rem,8vw,5.25rem)] font-black leading-[0.88] tracking-[-0.075em] text-[#111]">
-              Your workout. Your way.
+              {dictionary.hero.title}
             </h1>
 
             <p className="mt-7 max-w-xl text-base leading-relaxed text-[#626262] md:text-xl">
-              800+ illustrated exercises. Strength and cardio routines. No ads,
-              no sign-up — just training.
+              {dictionary.hero.description}
             </p>
 
             <div className="mt-9 flex flex-col items-center gap-5 sm:flex-row">
@@ -102,10 +105,12 @@ export default function Home() {
                   className="object-contain"
                   style={{ filter: "invert(1)" }}
                 />
-                View on GitHub
+                {dictionary.hero.github}
               </a>
 
-              <span className="text-sm font-semibold text-[#777]">Free · Private · No account</span>
+              <span className="text-sm font-semibold text-[#777]">
+                {dictionary.hero.details}
+              </span>
             </div>
           </div>
 
@@ -113,7 +118,7 @@ export default function Home() {
             <div className="home-halo" />
             <Image
               src="/home.png"
-              alt="Doo It! workout dashboard"
+              alt={dictionary.hero.imageAlt}
               width={900}
               height={900}
               className="h-auto w-full object-contain drop-shadow-[0_35px_45px_rgba(0,0,0,0.22)]"
@@ -144,7 +149,7 @@ export default function Home() {
         <div className="mockup-showcase">
           <Image
             src="/full-features.png"
-            alt="Doo It! screens showing workouts, progress, muscles and reminders"
+            alt={dictionary.showcase.imageAlt}
             width={4200}
             height={1633}
             className="mockup-showcase-image"
@@ -177,41 +182,21 @@ export default function Home() {
           <div className="mx-auto max-w-[1440px]">
             <div className="mx-auto mb-14 max-w-2xl text-center md:mb-20">
               <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#777]">
-                Made for every workout
+                {dictionary.features.eyebrow}
               </p>
               <h2 className="text-4xl font-black leading-[0.98] tracking-[-0.055em] text-[#111] md:text-6xl">
-                Everything you need to train better.
+                {dictionary.features.title}
               </h2>
               <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#686868] md:text-lg">
-                Find the right exercise, build a routine around your goals, and
-                stay focused through every set.
+                {dictionary.features.description}
               </p>
             </div>
 
             <div className="grid items-start gap-7 md:grid-cols-3">
-              {[
-                {
-                  title: "Explore",
-                  body: "Find the right exercise from among more than 800 illustrated exercises organized by muscle group.",
-                  background: "#ebf0f8",
-                  accent: "#e44940",
-                  image: "/Explore.png",
-                },
-                {
-                  title: "Build",
-                  body: "Create strength and cardio routines that fit your goals, your schedule, and the equipment you have.",
-                  background: "#ebf0f8",
-                  accent: "#1579fb",
-                  image: "/build.png",
-                },
-                {
-                  title: "Train",
-                  body: "Follow every exercise, set, and repetition in a simple workout experience that keeps you moving.",
-                  background: "#ebf0f8",
-                  accent: "#2db062",
-                  image: "/Train.png",
-                },
-              ].map(({ title, body, background, accent, image }) => (
+              {dictionary.features.cards.map(({ title, body, imageAlt }, index) => {
+                const { background, accent, image } = featureVisuals[index];
+
+                return (
                 <article
                   key={title}
                   className="relative mx-auto w-full max-w-3xl overflow-hidden rounded-[2rem] md:max-w-none"
@@ -235,7 +220,7 @@ export default function Home() {
                   <div className="relative z-10 mx-3 mt-1 aspect-4/5 overflow-hidden rounded-t-[1.5rem]">
                     <Image
                       src={image}
-                      alt={`${title} in Doo It!`}
+                      alt={imageAlt}
                       width={900}
                       height={1880}
                       sizes="(max-width: 1024px) 100vw, 33vw"
@@ -243,7 +228,8 @@ export default function Home() {
                     />
                   </div>
                 </article>
-              ))}
+                );
+              })}
             </div>
 
             <article className="relative mt-7 flex min-h-[48rem] flex-col overflow-hidden rounded-[2rem] bg-[#eff1f8] lg:block lg:min-h-[42rem]">
@@ -254,22 +240,20 @@ export default function Home() {
 
               <div className="relative z-20 mx-auto max-w-md px-7 pb-3 pt-9 text-center lg:ml-auto lg:mr-0 lg:max-w-[52%] lg:p-16 lg:text-left">
                 <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#777] lg:mb-5 lg:text-xs">
-                  Training insights
+                  {dictionary.insights.eyebrow}
                 </p>
                 <h3 className="text-[2.35rem] font-black leading-[0.98] tracking-[-0.055em] text-[#111] sm:text-5xl lg:text-6xl">
-                  See your progress at a glance.
+                  {dictionary.insights.title}
                 </h3>
                 <p className="mx-auto mt-4 max-w-sm text-base leading-6 text-[#626262] lg:mx-0 lg:mt-6 lg:max-w-md lg:text-xl lg:leading-8">
-                  Turn every session into clear charts and detailed reports.
-                  See your exercises, sets, reps, and training history in one
-                  visual summary.
+                  {dictionary.insights.description}
                 </p>
               </div>
 
               <div className="relative z-10 mx-auto mb-8 mt-auto h-[29rem] sm:h-[34rem] lg:absolute lg:left-[3%] lg:top-1/2 lg:mx-0 lg:mb-0 lg:mt-0 lg:h-[86%] lg:-translate-y-1/2">
                 <Image
                   src="/report-3.png"
-                  alt="Workout charts and detailed training reports in Doo It!"
+                  alt={dictionary.insights.imageAlt}
                   width={1715}
                   height={1927}
                   sizes="(max-width: 767px) 420px, (max-width: 1024px) 460px, 580px"
@@ -287,26 +271,25 @@ export default function Home() {
 
               <div className="relative z-20 mx-auto max-w-md px-7 pb-3 pt-9 text-center lg:mx-0 lg:max-w-[52%] lg:p-16 lg:text-left">
                 <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#777] lg:mb-5 lg:text-xs">
-                  Made to be yours
+                  {dictionary.share.eyebrow}
                 </p>
                 <h3 className="text-[2.35rem] font-black leading-[0.98] tracking-[-0.055em] text-[#111] sm:text-5xl lg:text-6xl">
-                  Make every workout worth sharing.
+                  {dictionary.share.title}
                 </h3>
                 <p className="mx-auto mt-4 max-w-sm text-base leading-6 text-[#626262] lg:mx-0 lg:mt-6 lg:max-w-md lg:text-xl lg:leading-8">
-                  Turn your training into a visual recap you can save, share,
-                  and feel proud of—from the first set to the last rep.
+                  {dictionary.share.description}
                 </p>
               </div>
 
-              <div className="relative z-10 mx-auto mb-8 mt-auto h-[29rem] sm:h-[34rem] lg:absolute lg:right-[2%] lg:top-1/2 lg:mx-0 lg:mb-0 lg:mt-0 lg:h-[86%] lg:-translate-y-1/2">
+              <div className="relative z-10 mx-auto mb-6 mt-auto flex w-full justify-center px-6 pt-6 sm:mb-8 sm:px-10 lg:absolute lg:right-[2%] lg:top-1/2 lg:mx-0 lg:mb-0 lg:mt-0 lg:h-[86%] lg:w-auto lg:-translate-y-1/2 lg:px-0 lg:pt-0">
                 <Image
                   src="/share.png"
-                  alt="Shareable workout recap in Doo It!"
+                  alt={dictionary.share.imageAlt}
                   width={1715}
                   height={1927}
                   sizes="(max-width: 767px) 420px, (max-width: 1024px) 460px, 580px"
                   unoptimized
-                  className="h-full w-auto drop-shadow-[0_32px_50px_rgba(20,28,70,0.2)]"
+                  className="h-auto w-full max-w-[25rem] object-contain drop-shadow-[0_32px_50px_rgba(20,28,70,0.2)] sm:max-w-[28rem] lg:h-full lg:w-auto lg:max-w-none"
                 />
               </div>
             </article>
@@ -326,33 +309,30 @@ export default function Home() {
               />
               <div className="relative z-10 mx-auto max-w-3xl text-center">
                 <p className="mb-4 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-white/55 sm:text-xs">
-                  Privacy by design
+                  {dictionary.privacy.eyebrow}
                 </p>
                 <h3 className="text-[2.35rem] font-black leading-[0.98] tracking-[-0.055em] sm:text-5xl lg:text-6xl">
-                  Your workouts stay yours.
+                  {dictionary.privacy.title}
                 </h3>
                 <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/65 sm:text-lg lg:text-xl lg:leading-8">
-                  No account, no cloud, and no tracking. Your routines and
-                  training history stay securely on your device, under your
-                  control.
+                  {dictionary.privacy.description}
                 </p>
               </div>
             </article>
           </div>
         </section>
 
-        <div className="mx-auto max-w-[1440px]">
-          <div className="mx-auto mb-14 max-w-2xl text-center md:mb-20">
-            <h2 className="text-4xl font-black leading-[0.98] tracking-[-0.055em] text-[#111] md:text-6xl">
-              Grab everything you need and get started.
+        <section className="relative flex flex-col items-center overflow-hidden bg-white px-5 pb-20 pt-36 text-center md:pb-24 md:pt-36">
+          <div className="relative z-10 flex max-w-4xl flex-col items-center">
+            <h2 className="max-w-4xl text-[clamp(3.25rem,8vw,5.25rem)] font-black leading-[0.88] tracking-[-0.075em] text-[#111]">
+              {dictionary.cta.title}
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#686868] md:text-lg">
-              Choose your exercises, build a routine around your goals, and
-              start training. Doo It! keeps everything else simple.
+            <p className="mt-7 max-w-xl text-base leading-relaxed text-[#626262] md:text-xl">
+              {dictionary.cta.description}
             </p>
             <a
               href="https://github.com/Mati-mlttn/DooIt-Fitness"
-              className="mx-auto mt-6 inline-flex h-11 w-fit items-center justify-center gap-2 rounded-full bg-[#171717] px-8 text-base font-bold text-white shadow-lg shadow-black/10 transition-transform duration-200 hover:scale-[1.04] active:scale-[0.98]"
+              className="mt-9 inline-flex h-14 w-fit items-center justify-center gap-2 rounded-full bg-[#171717] px-8 text-base font-bold text-white shadow-lg shadow-black/10 transition-transform duration-200 hover:scale-[1.04] active:scale-[0.98]"
             >
               <Image
                 src="/github-logo.png"
@@ -362,14 +342,14 @@ export default function Home() {
                 className="object-contain"
                 style={{ filter: "invert(1)" }}
               />
-              View on GitHub
+              {dictionary.cta.github}
             </a>
           </div>
-        </div>
+        </section>
         <div className="mockup-showcase">
           <Image
             src="/full.png"
-            alt="Doo It! screens showing workouts, progress, muscles and reminders"
+            alt={dictionary.showcase.imageAlt}
             width={4200}
             height={1633}
             className="mockup-showcase-image"
@@ -388,7 +368,18 @@ export default function Home() {
           <div className="flex gap-8">
             <Image src="/gosht-2.png" alt="" width={90} height={90} priority />
           </div>
-          <span>© {new Date().getFullYear()} Doo It!</span>
+          <div className="flex items-center gap-3 text-xs md:text-sm">
+            <a
+              href="https://app.notion.com/p/Privacy-Policy-Doo-It-2ae0fe38e5c78041abd7f3269a35583f?source=copy_link"
+              className="transition-colors hover:text-[#0A0A0A] md:hidden"
+            >
+              {dictionary.footer.privacy}
+            </a>
+            <span aria-hidden="true" className="text-black/20 md:hidden">
+              ·
+            </span>
+            <span>© {new Date().getFullYear()} Doo It!</span>
+          </div>
         </div>
       </footer>
 
@@ -400,4 +391,8 @@ export default function Home() {
       `}</style>
     </div>
   );
+}
+
+export default function Home() {
+  return <LandingPage dictionary={en} />;
 }

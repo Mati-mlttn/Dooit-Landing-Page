@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "title": "Doo It! — Your personal workout app",
+    "description": "800+ illustrated exercises, strength and cardio routines, no ads and no sign-up."
+  },
+  "nav": {
+    "homeLabel": "Doo It! home",
+    "features": "Features",
+    "privacy": "Privacy Policy"
+  },
+  "hero": {
+    "badge": "Built for Android",
+    "title": "Your workout. Your way.",
+    "description": "800+ illustrated exercises. Strength and cardio routines. No ads, no sign-up — just training.",
+    "github": "View on GitHub",
+    "details": "Free · Private · No account",
+    "imageAlt": "Doo It! workout dashboard"
+  },
+  "ticker": [
+    "Squat",
+    "Deadlift",
+    "Bench Press",
+    "Pull-up",
+    "Overhead Press",
+    "Hip Thrust",
+    "Barbell Row",
+    "Dips",
+    "Bicep Curl",
+    "Plank",
+    "Burpees",
+    "Tricep Extension",
+    "Lat Pulldown",
+    "Incline Bench Press",
+    "Leg Press",
+    "Romanian Deadlift",
+    "Walking Lunges",
+    "Bulgarian Split Squat",
+    "Leg Curl",
+    "Leg Extension",
+    "Lateral Raise",
+    "Hammer Curl"
+  ],
+  "showcase": {
+    "imageAlt": "Doo It! screens showing workouts, progress, muscles and reminders"
+  },
+  "features": {
+    "eyebrow": "Made for every workout",
+    "title": "Everything you need to train better.",
+    "description": "Find the right exercise, build a routine around your goals, and stay focused through every set.",
+    "cards": [
+      {
+        "title": "Explore",
+        "body": "Find the right exercise from more than 800 illustrated movements organized by muscle group.",
+        "imageAlt": "Exercise explorer in Doo It!"
+      },
+      {
+        "title": "Build",
+        "body": "Create strength and cardio routines that fit your goals, schedule, and available equipment.",
+        "imageAlt": "Routine builder in Doo It!"
+      },
+      {
+        "title": "Train",
+        "body": "Follow every exercise, set, and repetition in a simple experience that keeps you moving.",
+        "imageAlt": "Active workout in Doo It!"
+      }
+    ]
+  },
+  "insights": {
+    "eyebrow": "Training insights",
+    "title": "See your progress at a glance.",
+    "description": "Turn every session into clear charts and detailed reports. See your exercises, sets, reps, and training history in one visual summary.",
+    "imageAlt": "Workout charts and detailed training reports in Doo It!"
+  },
+  "share": {
+    "eyebrow": "Made to be yours",
+    "title": "Make every workout worth sharing.",
+    "description": "Turn your training into a visual recap you can save, share, and feel proud of — from the first set to the last rep.",
+    "imageAlt": "Shareable workout recap in Doo It!"
+  },
+  "privacy": {
+    "eyebrow": "Privacy by design",
+    "title": "Your workouts stay yours.",
+    "description": "No account, no cloud, and no tracking. Your routines and training history stay securely on your device, under your control."
+  },
+  "cta": {
+    "title": "Grab everything you need and get started.",
+    "description": "Choose your exercises, build a routine around your goals, and start training. Doo It! keeps everything else simple.",
+    "github": "View on GitHub"
+  },
+  "footer": {
+    "privacy": "Privacy Policy"
+  }
+}

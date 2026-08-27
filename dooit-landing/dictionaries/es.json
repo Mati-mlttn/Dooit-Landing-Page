@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "title": "Doo It! — Tu app personal de entrenamiento",
+    "description": "Más de 800 ejercicios ilustrados, rutinas de fuerza y cardio, sin anuncios y sin necesidad de registrarte."
+  },
+  "nav": {
+    "homeLabel": "Inicio de Doo It!",
+    "features": "Funciones",
+    "privacy": "Privacidad"
+  },
+  "hero": {
+    "badge": "Diseñada para Android",
+    "title": "Entrena a tu manera.",
+    "description": "Más de 800 ejercicios ilustrados y rutinas de fuerza y cardio. Sin anuncios, sin cuentas — solo entrenar.",
+    "github": "Ver en GitHub",
+    "details": "Gratis · Privada · Sin cuenta",
+    "imageAlt": "Panel de entrenamiento de Doo It!"
+  },
+  "ticker": [
+    "Sentadilla",
+    "Peso muerto",
+    "Press de banca",
+    "Dominadas",
+    "Press militar",
+    "Empuje de cadera",
+    "Remo con barra",
+    "Fondos",
+    "Curl de bíceps",
+    "Plancha",
+    "Burpees",
+    "Extensión de tríceps",
+    "Jalón al pecho",
+    "Press inclinado",
+    "Prensa de piernas",
+    "Peso muerto rumano",
+    "Zancadas caminando",
+    "Sentadilla búlgara",
+    "Curl femoral",
+    "Extensión de piernas",
+    "Elevaciones laterales",
+    "Curl martillo"
+  ],
+  "showcase": {
+    "imageAlt": "Pantallas de Doo It! con entrenamientos, progreso, músculos y recordatorios"
+  },
+  "features": {
+    "eyebrow": "Todo para entrenar",
+    "title": "Lo que necesitas para avanzar.",
+    "description": "Encuentra el ejercicio indicado, crea una rutina para tus objetivos y mantén el foco en cada serie.",
+    "cards": [
+      {
+        "title": "Explora",
+        "body": "Encuentra el ejercicio adecuado entre más de 800 ejercicios ilustrados y organizados por grupo muscular.",
+        "imageAlt": "Explorador de ejercicios de Doo It!"
+      },
+      {
+        "title": "Crea",
+        "body": "Arma rutinas de fuerza o cardio según tus objetivos, tu tiempo y el equipo que tengas disponible.",
+        "imageAlt": "Creador de rutinas de Doo It!"
+      },
+      {
+        "title": "Entrena",
+        "body": "Sigue cada ejercicio, serie y repetición en una experiencia sencilla que te ayuda a mantener el ritmo.",
+        "imageAlt": "Entrenamiento activo en Doo It!"
+      }
+    ]
+  },
+  "insights": {
+    "eyebrow": "Tu progreso en datos",
+    "title": "Entiende tu avance de un vistazo.",
+    "description": "Convierte cada sesión en gráficos claros e informes útiles. Revisa ejercicios, series, repeticiones y todo tu historial en un solo lugar.",
+    "imageAlt": "Gráficos e informes detallados de entrenamiento en Doo It!"
+  },
+  "share": {
+    "eyebrow": "Hecha para ti",
+    "title": "Entrena. Compártelo. Siéntete orgulloso.",
+    "description": "Transforma cada entrenamiento en un resumen visual listo para guardar o compartir, desde la primera serie hasta la última repetición.",
+    "imageAlt": "Resumen visual de entrenamiento para compartir desde Doo It!"
+  },
+  "privacy": {
+    "eyebrow": "Privacidad desde el diseño",
+    "title": "Tus entrenamientos son solo tuyos.",
+    "description": "Sin cuentas, sin nube y sin seguimiento. Tus rutinas y tu historial permanecen seguros en tu dispositivo y siempre bajo tu control."
+  },
+  "cta": {
+    "title": "Todo listo. Solo falta empezar.",
+    "description": "Elige tus ejercicios, crea una rutina para tus objetivos y empieza a entrenar. Doo It! se encarga de mantenerlo simple.",
+    "github": "Ver en GitHub"
+  },
+  "footer": {
+    "privacy": "Política de privacidad"
+  }
+}
