@@ -115,9 +115,13 @@
       "submitting": "Securing your registration…",
       "pending": "Secure registration coming soon",
       "status": "We will send a secure link to confirm that the email belongs to you before adding it to the list.",
+      "successTitle": "Check your inbox",
       "success": "Check your inbox. If the address can receive invitations, you will find a confirmation link valid for 30 minutes.",
+      "errorTitle": "We couldn't complete registration",
       "error": "We could not complete registration right now. Refresh the security check and try again.",
+      "verifiedTitle": "Email confirmed",
       "verified": "Your email is confirmed. You are now on the closed beta waitlist.",
+      "verificationInvalidTitle": "This link is no longer valid",
       "verificationInvalid": "This confirmation link is invalid or has expired. Submit your email again to receive a new one."
     },
     "privacyNote": "No spam. No advertising lists. You will be able to request deletion at any time."

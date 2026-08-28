@@ -115,9 +115,13 @@
       "submitting": "Protegiendo tu registro…",
       "pending": "Registro seguro disponible pronto",
       "status": "Te enviaremos un enlace seguro para confirmar que el correo te pertenece antes de añadirte a la lista.",
+      "successTitle": "Revisa tu correo",
       "success": "Revisa tu correo. Si la dirección puede recibir invitaciones, encontrarás un enlace de confirmación válido durante 30 minutos.",
+      "errorTitle": "No pudimos completar el registro",
       "error": "No pudimos completar el registro en este momento. Renueva la verificación de seguridad e inténtalo nuevamente.",
+      "verifiedTitle": "Correo confirmado",
       "verified": "Tu correo quedó confirmado. Ya formas parte de la lista de espera de la beta cerrada.",
+      "verificationInvalidTitle": "El enlace ya no es válido",
       "verificationInvalid": "Este enlace de confirmación no es válido o ya venció. Registra nuevamente tu correo para recibir uno nuevo."
     },
     "privacyNote": "Sin spam ni listas publicitarias. Podrás solicitar la eliminación de tu correo cuando quieras."

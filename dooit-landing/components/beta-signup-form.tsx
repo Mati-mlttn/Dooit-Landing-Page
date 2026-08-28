@@ -34,9 +34,13 @@ type FormCopy = {
   submitting: string;
   pending: string;
   status: string;
+  successTitle: string;
   success: string;
+  errorTitle: string;
   error: string;
+  verifiedTitle: string;
   verified: string;
+  verificationInvalidTitle: string;
   verificationInvalid: string;
 };
 
@@ -68,9 +72,12 @@ export function BetaSignupForm({
   );
   const widgetContainer = useRef<HTMLDivElement>(null);
   const widgetId = useRef<string | undefined>(undefined);
+  const statusPanel = useRef<HTMLDivElement>(null);
+
+  const completed = status === "success" || status === "verified";
 
   useEffect(() => {
-    if (!enabled || !siteKey || !scriptReady || !widgetContainer.current) return;
+    if (completed || !enabled || !siteKey || !scriptReady || !widgetContainer.current) return;
     if (!window.turnstile || widgetId.current) return;
 
     widgetId.current = window.turnstile.render(widgetContainer.current, {
@@ -89,7 +96,13 @@ export function BetaSignupForm({
       }
       widgetId.current = undefined;
     };
-  }, [enabled, scriptReady, siteKey]);
+  }, [completed, enabled, scriptReady, siteKey]);
+
+  useEffect(() => {
+    if (status === "success" || status === "error" || status === "verified" || status === "invalid") {
+      statusPanel.current?.focus({ preventScroll: true });
+    }
+  }, [status]);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -124,16 +137,47 @@ export function BetaSignupForm({
     }
   }
 
-  const statusMessage =
-    status === "success"
-      ? copy.success
-      : status === "error"
-        ? copy.error
-        : status === "verified"
-          ? copy.verified
-          : status === "invalid"
-            ? copy.verificationInvalid
-            : copy.status;
+  if (completed) {
+    const title = status === "verified" ? copy.verifiedTitle : copy.successTitle;
+    const message = status === "verified" ? copy.verified : copy.success;
+
+    return (
+      <div
+        ref={statusPanel}
+        id="beta-form-status"
+        role="status"
+        aria-live="polite"
+        tabIndex={-1}
+        className="flex min-h-[320px] w-full flex-col items-center justify-center rounded-[1.75rem] border border-[#1579fb]/15 bg-[#1579fb]/[0.06] px-6 py-10 text-center outline-none sm:min-h-[350px] sm:px-10"
+      >
+        <span className="grid h-16 w-16 place-items-center rounded-full bg-[#1579fb] text-white shadow-[0_14px_35px_rgba(21,121,251,0.25)]">
+          <svg
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+            className="h-8 w-8 fill-none stroke-current stroke-[2.2]"
+          >
+            {status === "verified" ? (
+              <path d="m5 12.5 4.2 4.2L19 7" />
+            ) : (
+              <>
+                <path d="M4 7.5 12 13l8-5.5M5 6h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1Z" />
+              </>
+            )}
+          </svg>
+        </span>
+        <h3 className="mt-6 text-3xl font-black tracking-[-0.045em] text-[#171717] sm:text-4xl">
+          {title}
+        </h3>
+        <p className="mt-4 max-w-sm text-sm leading-6 text-[#596274] sm:text-base sm:leading-7">
+          {message}
+        </p>
+      </div>
+    );
+  }
+
+  const hasError = status === "error" || status === "invalid";
+  const errorTitle = status === "invalid" ? copy.verificationInvalidTitle : copy.errorTitle;
+  const errorMessage = status === "invalid" ? copy.verificationInvalid : copy.error;
 
   return (
     <>
@@ -143,6 +187,30 @@ export function BetaSignupForm({
           strategy="afterInteractive"
           onReady={() => setScriptReady(true)}
         />
+      ) : null}
+
+      {hasError ? (
+        <div
+          ref={statusPanel}
+          id="beta-form-status"
+          role="alert"
+          aria-live="assertive"
+          tabIndex={-1}
+          className="mb-5 flex items-start gap-3 rounded-2xl border border-red-500/25 bg-red-50 p-4 text-sm leading-5 text-red-800 outline-none"
+        >
+          <svg
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            className="mt-0.5 h-5 w-5 shrink-0 fill-none stroke-red-600 stroke-[1.8]"
+          >
+            <circle cx="10" cy="10" r="7.5" />
+            <path d="M10 5.8v5.2M10 14.2v.1" />
+          </svg>
+          <div>
+            <p className="font-extrabold">{errorTitle}</p>
+            <p className="mt-1 text-xs leading-5 text-red-700 sm:text-sm">{errorMessage}</p>
+          </div>
+        </div>
       ) : null}
 
       <form aria-describedby="beta-form-status" onSubmit={handleSubmit}>
@@ -206,21 +274,23 @@ export function BetaSignupForm({
         </fieldset>
       </form>
 
-      <div
-        id="beta-form-status"
-        role="status"
-        aria-live="polite"
-        className="mt-5 flex items-start gap-3 rounded-2xl border border-[#1579fb]/10 bg-[#1579fb]/[0.05] p-4 text-xs leading-5 text-[#596274]"
-      >
-        <svg
-          viewBox="0 0 20 20"
-          aria-hidden="true"
-          className="mt-0.5 h-4 w-4 shrink-0 fill-none stroke-[#1579fb] stroke-[1.7]"
+      {!hasError ? (
+        <div
+          id="beta-form-status"
+          role="status"
+          aria-live="polite"
+          className="mt-5 flex items-start gap-3 rounded-2xl border border-[#1579fb]/10 bg-[#1579fb]/[0.05] p-4 text-xs leading-5 text-[#596274]"
         >
-          <path d="M6.5 8V6a3.5 3.5 0 0 1 7 0v2M5 8h10v8H5z" />
-        </svg>
-        <p>{statusMessage}</p>
-      </div>
+          <svg
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            className="mt-0.5 h-4 w-4 shrink-0 fill-none stroke-[#1579fb] stroke-[1.7]"
+          >
+            <path d="M6.5 8V6a3.5 3.5 0 0 1 7 0v2M5 8h10v8H5z" />
+          </svg>
+          <p>{copy.status}</p>
+        </div>
+      ) : null}
     </>
   );
 }

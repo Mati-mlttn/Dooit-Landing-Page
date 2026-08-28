@@ -45,13 +45,21 @@ export async function sendBetaVerificationEmail({
 
   const message = copy[locale];
   const link = verificationUrl.toString();
+  const logoUrl = new URL("/logo.png", siteUrl).toString();
   const html = `
     <!doctype html>
     <html lang="${locale}">
       <body style="margin:0;background:#f4f5f8;font-family:Arial,sans-serif;color:#171717">
         <div style="max-width:560px;margin:0 auto;padding:48px 20px">
           <div style="background:#fff;border:1px solid #e8e8e8;border-radius:24px;padding:36px">
-            <p style="margin:0 0 24px;font-size:18px;font-weight:800">Doo It!</p>
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px">
+              <tr>
+                <td style="padding-right:10px;vertical-align:middle">
+                  <img src="${logoUrl}" width="36" height="36" alt="" style="display:block;width:36px;height:36px;border:0;object-fit:contain" />
+                </td>
+                <td style="vertical-align:middle;font-size:18px;font-weight:800">Doo It!</td>
+              </tr>
+            </table>
             <h1 style="margin:0 0 16px;font-size:32px;line-height:1.05">${message.heading}</h1>
             <p style="margin:0 0 28px;color:#626262;line-height:1.6">${message.body}</p>
             <a href="${link}" style="display:inline-block;border-radius:999px;background:#171717;color:#fff;padding:15px 24px;font-size:14px;font-weight:700;text-decoration:none">${message.button}</a>
