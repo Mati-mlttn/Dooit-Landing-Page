@@ -36,7 +36,9 @@ export function proxy(request: NextRequest) {
 
   const locale = detectLocale(request);
   const destination = request.nextUrl.clone();
-  destination.pathname = `/${locale}`;
+  destination.pathname = `/${locale}${
+    request.nextUrl.pathname === "/" ? "" : request.nextUrl.pathname
+  }`;
 
   const response = NextResponse.redirect(destination);
   response.cookies.set(localeCookie, locale, {
@@ -48,5 +50,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/en", "/es"],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|.*\\..*).*)"],
 };

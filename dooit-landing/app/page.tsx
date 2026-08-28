@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { Metadata } from "next";
 import en from "@/dictionaries/en.json";
-import type { Dictionary } from "@/lib/i18n";
+import type { Dictionary, Locale } from "@/lib/i18n";
 
 export const metadata: Metadata = en.metadata;
 
@@ -13,9 +13,10 @@ const featureVisuals = [
 
 type LandingPageProps = {
   dictionary: Dictionary;
+  locale: Locale;
 };
 
-export function LandingPage({ dictionary }: LandingPageProps) {
+export function LandingPage({ dictionary, locale }: LandingPageProps) {
   const ticker = dictionary.ticker;
 
   return (
@@ -94,8 +95,21 @@ export function LandingPage({ dictionary }: LandingPageProps) {
 
             <div className="mt-9 flex flex-col items-center gap-5 sm:flex-row">
               <a
+                href={`/${locale}/beta`}
+                className="group inline-flex h-14 w-fit items-center justify-center gap-3 rounded-full bg-[#171717] px-8 text-base font-bold text-white shadow-lg shadow-black/10 transition-transform duration-200 hover:scale-[1.04] active:scale-[0.98]"
+              >
+                {dictionary.hero.beta}
+                <svg
+                  viewBox="0 0 20 20"
+                  aria-hidden="true"
+                  className="h-4 w-4 fill-none stroke-current stroke-[1.8] transition-transform duration-200 group-hover:translate-x-1"
+                >
+                  <path d="M4 10h11M11 6l4 4-4 4" />
+                </svg>
+              </a>
+              <a
                 href="https://github.com/Mati-mlttn/DooIt-Fitness"
-                className="inline-flex h-14 w-fit items-center justify-center gap-2 rounded-full bg-[#171717] px-8 text-base font-bold text-white shadow-lg shadow-black/10 transition-transform duration-200 hover:scale-[1.04] active:scale-[0.98]"
+                className="inline-flex h-14 w-fit items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-7 text-base font-bold text-[#171717] shadow-sm transition-transform duration-200 hover:scale-[1.04] active:scale-[0.98]"
               >
                 <Image
                   src="/github-logo.png"
@@ -103,15 +117,13 @@ export function LandingPage({ dictionary }: LandingPageProps) {
                   width={20}
                   height={20}
                   className="object-contain"
-                  style={{ filter: "invert(1)" }}
                 />
                 {dictionary.hero.github}
               </a>
-
-              <span className="text-sm font-semibold text-[#777]">
-                {dictionary.hero.details}
-              </span>
             </div>
+            <span className="mt-5 text-sm font-semibold text-[#777]">
+              {dictionary.hero.details}
+            </span>
           </div>
 
           <div className="relative z-10 mt-5 w-[380px] translate-y-6 md:mt-5 md:w-[490px] lg:w-[590px]">
@@ -394,5 +406,5 @@ export function LandingPage({ dictionary }: LandingPageProps) {
 }
 
 export default function Home() {
-  return <LandingPage dictionary={en} />;
+  return <LandingPage dictionary={en} locale="en" />;
 }
