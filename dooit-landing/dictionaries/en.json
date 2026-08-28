@@ -12,6 +12,7 @@
     "badge": "Built for Android",
     "title": "Your workout. Your way.",
     "description": "800+ illustrated exercises. Strength and cardio routines. No ads, no sign-up — just training.",
+    "beta": "Join the closed beta",
     "github": "View on GitHub",
     "details": "Free · Private · No account",
     "imageAlt": "Doo It! workout dashboard"
@@ -86,6 +87,40 @@
     "title": "Grab everything you need and get started.",
     "description": "Choose your exercises, build a routine around your goals, and start training. Doo It! keeps everything else simple.",
     "github": "View on GitHub"
+  },
+  "beta": {
+    "metadata": {
+      "title": "Join the closed beta — Doo It!",
+      "description": "Join the Doo It! closed beta and help us bring a private, distraction-free workout app to Google Play."
+    },
+    "back": "Back to home",
+    "eyebrow": "Closed Android beta",
+    "title": "Help Doo It! reach Google Play.",
+    "description": "Join the first group of testers, try the app before launch, and help us make every workout experience better.",
+    "benefits": [
+      "Early access to new releases",
+      "A direct way to share feedback",
+      "Your email used only for beta access"
+    ],
+    "form": {
+      "eyebrow": "Beta waitlist",
+      "title": "Save your spot.",
+      "description": "Use the same Google Account email you have in the Play Store.",
+      "emailLabel": "Google Play email",
+      "emailPlaceholder": "you@example.com",
+      "consent": "I agree that Doo It! may use this email only to manage my closed beta invitation.",
+      "privacyPrefix": "Read the",
+      "privacy": "Privacy Policy",
+      "submit": "Join the beta",
+      "submitting": "Securing your registration…",
+      "pending": "Secure registration coming soon",
+      "status": "We will send a secure link to confirm that the email belongs to you before adding it to the list.",
+      "success": "Check your inbox. If the address can receive invitations, you will find a confirmation link valid for 30 minutes.",
+      "error": "We could not complete registration right now. Refresh the security check and try again.",
+      "verified": "Your email is confirmed. You are now on the closed beta waitlist.",
+      "verificationInvalid": "This confirmation link is invalid or has expired. Submit your email again to receive a new one."
+    },
+    "privacyNote": "No spam. No advertising lists. You will be able to request deletion at any time."
   },
   "footer": {
     "privacy": "Privacy Policy"

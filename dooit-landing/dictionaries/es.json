@@ -12,6 +12,7 @@
     "badge": "Diseñada para Android",
     "title": "Entrena a tu manera.",
     "description": "Más de 800 ejercicios ilustrados y rutinas de fuerza y cardio. Sin anuncios, sin cuentas — solo entrenar.",
+    "beta": "Únete a la beta cerrada",
     "github": "Ver en GitHub",
     "details": "Gratis · Privada · Sin cuenta",
     "imageAlt": "Panel de entrenamiento de Doo It!"
@@ -86,6 +87,40 @@
     "title": "Todo listo. Solo falta empezar.",
     "description": "Elige tus ejercicios, crea una rutina para tus objetivos y empieza a entrenar. Doo It! se encarga de mantenerlo simple.",
     "github": "Ver en GitHub"
+  },
+  "beta": {
+    "metadata": {
+      "title": "Únete a la beta cerrada — Doo It!",
+      "description": "Únete a la beta cerrada de Doo It! y ayúdanos a llevar una app de entrenamiento privada y sin distracciones a Google Play."
+    },
+    "back": "Volver al inicio",
+    "eyebrow": "Beta cerrada para Android",
+    "title": "Ayuda a Doo It! a llegar a Google Play.",
+    "description": "Sé parte del primer grupo de testers, prueba la app antes del lanzamiento y ayúdanos a mejorar.",
+    "benefits": [
+      "Acceso anticipado a nuevas versiones",
+      "Un canal directo para compartir tu opinión",
+      "Tu correo se usará solo para darte acceso"
+    ],
+    "form": {
+      "eyebrow": "Lista de espera",
+      "title": "Reserva tu lugar.",
+      "description": "Usa el mismo correo de la cuenta de Google que tienes en Play Store.",
+      "emailLabel": "Correo de Google Play",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "consent": "Acepto que Doo It! use este correo únicamente para gestionar mi invitación a la beta cerrada.",
+      "privacyPrefix": "Consulta la",
+      "privacy": "Política de privacidad",
+      "submit": "Unirme a la beta",
+      "submitting": "Protegiendo tu registro…",
+      "pending": "Registro seguro disponible pronto",
+      "status": "Te enviaremos un enlace seguro para confirmar que el correo te pertenece antes de añadirte a la lista.",
+      "success": "Revisa tu correo. Si la dirección puede recibir invitaciones, encontrarás un enlace de confirmación válido durante 30 minutos.",
+      "error": "No pudimos completar el registro en este momento. Renueva la verificación de seguridad e inténtalo nuevamente.",
+      "verified": "Tu correo quedó confirmado. Ya formas parte de la lista de espera de la beta cerrada.",
+      "verificationInvalid": "Este enlace de confirmación no es válido o ya venció. Registra nuevamente tu correo para recibir uno nuevo."
+    },
+    "privacyNote": "Sin spam ni listas publicitarias. Podrás solicitar la eliminación de tu correo cuando quieras."
   },
   "footer": {
     "privacy": "Política de privacidad"

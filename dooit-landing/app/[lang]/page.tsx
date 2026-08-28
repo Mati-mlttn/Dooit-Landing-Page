@@ -24,5 +24,5 @@ export default async function LocalizedHome({ params }: LocalizedPageProps) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
 
-  return <LandingPage dictionary={getDictionary(lang)} />;
+  return <LandingPage dictionary={getDictionary(lang)} locale={lang} />;
 }
