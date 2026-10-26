@@ -51,6 +51,23 @@ pnpm start    # Run the production build
 pnpm lint     # Check the codebase
 ```
 
+## Database Keepalive
+
+Supabase pauses Free plan projects after a week without database activity. A daily Vercel
+Cron calls `/api/keepalive`, which runs a real query against the waitlist table so the
+project never goes idle.
+
+Set `CRON_SECRET` in Vercel (Production). Vercel sends it automatically as
+`Authorization: Bearer <CRON_SECRET>` on every cron invocation. The endpoint returns `401`
+without a matching secret and `503` when the database is unreachable. It cannot resume an
+already paused project, so restore it manually first.
+
+The same endpoint can be called from an external scheduler:
+
+```bash
+curl -H "Authorization: Bearer $CRON_SECRET" https://dooitfitness.com/api/keepalive
+```
+
 ## Project Status
 
 Doo It! is currently in active development and preparing for its closed Android beta.
