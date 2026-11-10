@@ -3,17 +3,17 @@ import type { Locale } from "@/lib/i18n";
 
 const copy = {
   en: {
-    subject: "Confirm your Doo It! beta email",
+    subject: "Confirm your doit beta email",
     heading: "One last step.",
-    body: "Confirm this email address to join the Doo It! closed beta waitlist.",
+    body: "Confirm this email address to join the doit closed beta waitlist.",
     button: "Confirm my email",
     expiry: "This secure link expires in 30 minutes and can only be used once.",
     ignore: "If you did not request this, you can safely ignore this message.",
   },
   es: {
-    subject: "Confirma tu correo para la beta de Doo It!",
+    subject: "Confirma tu correo para la beta de doit",
     heading: "Solo falta un paso.",
-    body: "Confirma este correo para unirte a la lista de espera de la beta cerrada de Doo It!.",
+    body: "Confirma este correo para unirte a la lista de espera de la beta cerrada de doit.",
     button: "Confirmar mi correo",
     expiry: "Este enlace seguro vence en 30 minutos y solo puede utilizarse una vez.",
     ignore: "Si no solicitaste esto, puedes ignorar el mensaje con tranquilidad.",
@@ -45,7 +45,7 @@ export async function sendBetaVerificationEmail({
 
   const message = copy[locale];
   const link = verificationUrl.toString();
-  const logoUrl = new URL("/logo.png", siteUrl).toString();
+  const logoUrl = new URL("/doit-text.png", siteUrl).toString();
   const html = `
     <!doctype html>
     <html lang="${locale}">
@@ -54,10 +54,9 @@ export async function sendBetaVerificationEmail({
           <div style="background:#fff;border:1px solid #e8e8e8;border-radius:24px;padding:36px">
             <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px">
               <tr>
-                <td style="padding-right:10px;vertical-align:middle">
-                  <img src="${logoUrl}" width="36" height="36" alt="" style="display:block;width:36px;height:36px;border:0;object-fit:contain" />
+                <td style="vertical-align:middle">
+                  <img src="${logoUrl}" height="24" alt="doit" style="display:block;height:24px;width:auto;border:0" />
                 </td>
-                <td style="vertical-align:middle;font-size:18px;font-weight:800">Doo It!</td>
               </tr>
             </table>
             <h1 style="margin:0 0 16px;font-size:32px;line-height:1.05">${message.heading}</h1>
