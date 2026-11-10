@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getDictionary, isLocale, locales } from "@/lib/i18n";
 import { BetaSignupForm } from "@/components/beta-signup-form";
+import NavBar from "@/components/NavBar";
 
 const privacyUrl =
   "https://app.notion.com/p/Privacy-Policy-Doo-It-2ae0fe38e5c78041abd7f3269a35583f?source=copy_link";
@@ -47,46 +48,21 @@ export default async function BetaPage({ params, searchParams }: BetaPageProps) 
 
   return (
     <div className="min-h-screen bg-[#f4f5f8] font-sans text-[#111] antialiased">
-      <header className="fixed left-1/2 top-4 z-50 w-[calc(100%_-_2rem)] max-w-[1400px] -translate-x-1/2 rounded-xl border border-gray-300/80 bg-white/75 shadow-[0_12px_40px_rgba(20,20,20,0.10)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/65">
-        <div className="flex h-14 items-center justify-between px-4 md:h-15 md:px-5">
-          <a
-            href={`/${lang}`}
-            className="flex items-center gap-3"
-            aria-label={dictionary.nav.homeLabel}
+      <NavBar
+        homeLabel={dictionary.nav.homeLabel}
+        homeHref={`/${lang}`}
+        actionLabel={beta.back}
+        actionHref={`/${lang}`}
+        actionIcon={
+          <svg
+            viewBox="0 0 20 20"
+            aria-hidden="true"
+            className="h-4 w-4 fill-none stroke-current stroke-[1.8] transition-transform duration-200 group-hover/btn:-translate-x-0.5"
           >
-            <Image
-              src="/logo.png"
-              alt=""
-              width={38}
-              height={38}
-              className="h-8 w-8 object-contain md:h-[38px] md:w-[38px]"
-              priority
-            />
-            <Image
-              src="/dooit.png"
-              alt=""
-              width={78}
-              height={78}
-              className="h-auto w-[78px] md:w-[78px]"
-              priority
-            />
-          </a>
-
-          <a
-            href={`/${lang}`}
-            className="group inline-flex h-9 items-center gap-2 rounded-full border border-black/8 bg-white/70 px-3 text-xs font-bold text-[#626262] transition-colors hover:text-black md:px-4 md:text-sm"
-          >
-            <svg
-              viewBox="0 0 20 20"
-              aria-hidden="true"
-              className="h-4 w-4 fill-none stroke-current stroke-[1.8] transition-transform duration-200 group-hover:-translate-x-0.5"
-            >
-              <path d="M16 10H5M9 6l-4 4 4 4" />
-            </svg>
-            <span className="hidden sm:inline">{beta.back}</span>
-          </a>
-        </div>
-      </header>
+            <path d="M16 10H5M9 6l-4 4 4 4" />
+          </svg>
+        }
+      />
 
       <main className="relative isolate min-h-screen overflow-hidden px-5 pb-20 pt-32 md:px-10 md:pb-28 md:pt-40">
         <div
@@ -175,7 +151,7 @@ export default async function BetaPage({ params, searchParams }: BetaPageProps) 
 
       <footer className="border-t border-black/[0.06] bg-white px-6 py-8">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-center text-xs text-[#888] sm:flex-row sm:text-left">
-          <Image src="/dooit.png" alt="Doo It!" width={72} height={24} />
+          <Image src="/doit-text.png" alt="doit" width={72} height={24} />
           <p>{beta.privacyNote}</p>
         </div>
       </footer>

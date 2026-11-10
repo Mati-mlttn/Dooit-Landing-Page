@@ -1,21 +1,22 @@
 {
   "metadata": {
-    "title": "Doo It! — Tu app personal de entrenamiento",
+    "title": "doit — Tu app personal de entrenamiento",
     "description": "Más de 800 ejercicios ilustrados, rutinas de fuerza y cardio, sin anuncios y sin necesidad de registrarte."
   },
   "nav": {
-    "homeLabel": "Inicio de Doo It!",
-    "features": "Funciones",
-    "privacy": "Privacidad"
+    "homeLabel": "Inicio de doit",
+    "joinBeta": "Únete a la beta"
   },
   "hero": {
-    "badge": "Diseñada para Android",
-    "title": "Entrena a tu manera.",
-    "description": "Más de 800 ejercicios ilustrados y rutinas de fuerza y cardio. Sin anuncios, sin cuentas — solo entrenar.",
+    "title": "Entrena sin distracciones",
+    "description": "Sin recomendaciones automáticas, sin feed, sin notificaciones que no pediste. Tú armas la rutina y doit te ayuda a completarla.",
     "beta": "Únete a la beta cerrada",
-    "github": "Ver en GitHub",
+    "github": "GitHub",
+    "download": "Descargar",
+    "playstore": "Play Store",
+    "soon": "Próximamente",
     "details": "Gratis · Privada · Sin cuenta",
-    "imageAlt": "Panel de entrenamiento de Doo It!"
+    "imageAlt": "Panel de entrenamiento de doit"
   },
   "ticker": [
     "Sentadilla",
@@ -42,7 +43,7 @@
     "Curl martillo"
   ],
   "showcase": {
-    "imageAlt": "Pantallas de Doo It! con entrenamientos, progreso, músculos y recordatorios"
+    "imageAlt": "Pantallas de doit con entrenamientos, progreso, músculos y recordatorios"
   },
   "features": {
     "eyebrow": "Todo para entrenar",
@@ -52,17 +53,17 @@
       {
         "title": "Explora",
         "body": "Encuentra el ejercicio adecuado entre más de 800 ejercicios ilustrados y organizados por grupo muscular.",
-        "imageAlt": "Explorador de ejercicios de Doo It!"
+        "imageAlt": "Explorador de ejercicios de doit"
       },
       {
         "title": "Crea",
         "body": "Arma rutinas de fuerza o cardio según tus objetivos, tu tiempo y el equipo que tengas disponible.",
-        "imageAlt": "Creador de rutinas de Doo It!"
+        "imageAlt": "Creador de rutinas de doit"
       },
       {
         "title": "Entrena",
         "body": "Sigue cada ejercicio, serie y repetición en una experiencia sencilla que te ayuda a mantener el ritmo.",
-        "imageAlt": "Entrenamiento activo en Doo It!"
+        "imageAlt": "Entrenamiento activo en doit"
       }
     ]
   },
@@ -70,13 +71,13 @@
     "eyebrow": "Tu progreso en datos",
     "title": "Entiende tu avance de un vistazo.",
     "description": "Convierte cada sesión en gráficos claros e informes útiles. Revisa ejercicios, series, repeticiones y todo tu historial en un solo lugar.",
-    "imageAlt": "Gráficos e informes detallados de entrenamiento en Doo It!"
+    "imageAlt": "Gráficos e informes detallados de entrenamiento en doit"
   },
   "share": {
     "eyebrow": "Hecha para ti",
     "title": "Entrena. Compártelo. Siéntete orgulloso.",
     "description": "Transforma cada entrenamiento en un resumen visual listo para guardar o compartir, desde la primera serie hasta la última repetición.",
-    "imageAlt": "Resumen visual de entrenamiento para compartir desde Doo It!"
+    "imageAlt": "Resumen visual de entrenamiento para compartir desde doit"
   },
   "privacy": {
     "eyebrow": "Privacidad desde el diseño",
@@ -85,17 +86,17 @@
   },
   "cta": {
     "title": "Todo listo. Solo falta empezar.",
-    "description": "Elige tus ejercicios, crea una rutina para tus objetivos y empieza a entrenar. Doo It! se encarga de mantenerlo simple.",
+    "description": "Elige tus ejercicios, crea una rutina para tus objetivos y empieza a entrenar. doit se encarga de mantenerlo simple.",
     "github": "Ver en GitHub"
   },
   "beta": {
     "metadata": {
-      "title": "Únete a la beta cerrada — Doo It!",
-      "description": "Únete a la beta cerrada de Doo It! y ayúdanos a llevar una app de entrenamiento privada y sin distracciones a Google Play."
+      "title": "Únete a la beta cerrada — doit",
+      "description": "Únete a la beta cerrada de doit y ayúdanos a llevar una app de entrenamiento privada y sin distracciones a Google Play."
     },
     "back": "Volver al inicio",
     "eyebrow": "Beta cerrada para Android",
-    "title": "Ayuda a Doo It! a llegar a Google Play.",
+    "title": "Ayuda a doit a llegar a Google Play.",
     "description": "Sé parte del primer grupo de testers, prueba la app antes del lanzamiento y ayúdanos a mejorar.",
     "benefits": [
       "Acceso anticipado a nuevas versiones",
@@ -108,7 +109,7 @@
       "description": "Usa el mismo correo de la cuenta de Google que tienes en Play Store.",
       "emailLabel": "Correo de Google Play",
       "emailPlaceholder": "tu@ejemplo.com",
-      "consent": "Acepto que Doo It! use este correo únicamente para gestionar mi invitación a la beta cerrada.",
+      "consent": "Acepto que doit use este correo únicamente para gestionar mi invitación a la beta cerrada.",
       "privacyPrefix": "Consulta la",
       "privacy": "Política de privacidad",
       "submit": "Unirme a la beta",
@@ -127,6 +128,9 @@
     "privacyNote": "Sin spam ni listas publicitarias. Podrás solicitar la eliminación de tu correo cuando quieras."
   },
   "footer": {
-    "privacy": "Política de privacidad"
+    "privacy": "Política de privacidad",
+    "sayHello": "Say hello",
+    "builtBy": "Sitio desarrollado por",
+    "follow": "Sigue al desarrollador"
   }
 }

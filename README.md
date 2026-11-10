@@ -1,6 +1,6 @@
-# Doo It! Landing Page
+# doit Landing Page
 
-Official website for **Doo It!**, a privacy-focused Android workout app designed to make training simple, visual, and distraction-free.
+Official website for **doit**, a privacy-focused Android workout app designed to make training simple, visual, and distraction-free.
 
 [Visit dooitfitness.com](https://dooitfitness.com)
 
@@ -53,4 +53,4 @@ pnpm lint     # Check the codebase
 
 ## Project Status
 
-Doo It! is currently in active development and preparing for its closed Android beta.
+doit is currently in active development and preparing for its closed Android beta.
